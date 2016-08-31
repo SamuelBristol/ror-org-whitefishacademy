@@ -6,6 +6,6 @@
 <% @posts.each do |post| %>
 <div>
   <h3><%= link_to post.title, post %></h3>
-  <p><%= post.content.truncate_words 50, separator: ' ', omission: '... (continued)' %></p>
+  <p><%= markdown (post.content.truncate_words 50, separator: ' ', omission: '... (continued)') %></p>
 </div>
 <% end %>
