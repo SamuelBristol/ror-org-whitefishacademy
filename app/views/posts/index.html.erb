@@ -4,8 +4,13 @@
 
 
 <% @posts.each do |post| %>
-<div>
-  <h3><%= link_to post.title, post %></h3>
-  <p><%= markdown (post.content.truncate_words 50, separator: ' ', omission: '... (continued)') %></p>
-</div>
+<article>
+  <section>
+    <h2><%= link_to post.title, post %></h2>
+    <h3>Created <%= time_ago_in_words post.created_at %> ago.</h3>
+  </section>
+  <section>
+    <%= markdown post.content.truncate_words 50, separator: ' ', omission: '... (continued)' %>
+  </section>
+</article>
 <% end %>
