@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902131816) do
+ActiveRecord::Schema.define(version: 20160903093553) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20160902131816) do
 
   create_table "people", force: :cascade do |t|
     t.string   "first_name"
-    t.string   "middle_initial"
+    t.string   "middle_name"
     t.string   "last_name"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "posts", force: :cascade do |t|
