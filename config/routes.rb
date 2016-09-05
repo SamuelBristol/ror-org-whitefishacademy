@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'staff', to: 'employee#index'
+  get 'staff', to: 'employees#index'
 
   resources :posts
   
-  get 'home/index'
   root 'home#index'
 
   # Example of regular route:
