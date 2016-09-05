@@ -3,7 +3,7 @@ namespace :db do
   task :populate => :environment do
     require 'faker'
     
-    [Post, Person].each(&:delete_all)
+    [Post, Person, Employee].each(&:delete_all)
     
     Post.populate 100 do |post|
       post.title = Faker::StarWars.quote
@@ -27,7 +27,16 @@ namespace :db do
       
       person.updated_at = Faker::Time.between(2.days.ago, Date.today, :afternoon)
       person.created_at = Faker::Time.between(30.days.ago, Date.today, :evening)
+    
+      Employee.populate 1 do |employee|
+        employee.person_id = person.id
+        
+        employee.title = Faker::Name.title
+        employee.bio = Faker::Hipster.paragraphs(5).join(' ')
+      end
     end
+    
+    
     
   end
 end
