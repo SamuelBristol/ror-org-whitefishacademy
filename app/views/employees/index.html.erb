@@ -1,0 +1,11 @@
+<h1>Employees#index</h1>
+<p>Find me in app/views/employees/index.html.erb</p>
+
+<% @employees.each do |employee| %>
+<div>
+    <h3><%= "#{employee.person.first_name} #{employee.person.middle_name} #{employee.person.last_name}" %></h3>
+    <h4><%= employee.title %></h4>
+    <img src="http://robohash.org/<%= employee.title %>">
+    <p><%= markdown employee.bio %></p>
+</div>
+<% end %>

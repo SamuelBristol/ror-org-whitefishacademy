@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :people
+  get 'staff', to: 'employees#index'
+
   resources :posts
   
   root 'home#index'
-
+  
+  match '*path' => redirect('/'), via: :get
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
