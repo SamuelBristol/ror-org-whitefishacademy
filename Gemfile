@@ -30,8 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'redcarpet'
-gem 'friendly_id'
+gem 'redcarpet'           # markdown parser
+gem 'friendly_id'         # route param ids to other attributes
+gem 'materialize-sass'    # materialize css framework
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
